@@ -1,4 +1,3 @@
-
 const path=require('path')
 const http=require('http')
 const express=require('express')
@@ -14,7 +13,6 @@ const {addUser,getUser,getusersInRoom,removeUser}=require('./utils/users')
 
 app.use(express.static(publicDirectoryPath))
 
-// let count=0
 io.on('connection',(socket)=>{
     console.log('New WebSocket Connection')
     socket.on('join',(options,callback)=>{
