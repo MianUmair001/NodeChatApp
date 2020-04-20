@@ -57,7 +57,9 @@ io.on('connection',(socket)=>{
 
 })
 
-
+app.get('/', function(req, res){
+    res.redirect('/');
+ });
 
 server.listen(port,()=>{
     console.log(`server is up on port ${port}!`)
