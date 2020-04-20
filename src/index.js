@@ -13,6 +13,7 @@ const publicDirectoryPath=path.join(__dirname,'../public')
 const {addUser,getUser,getusersInRoom,removeUser}=require('./utils/users')
 
 app.use(express.static(publicDirectoryPath))
+app.set("view engine",'ejs')
 
 
 io.on('connection',(socket)=>{
