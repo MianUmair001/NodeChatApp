@@ -9,9 +9,11 @@ const server=http.createServer(app)
 const io=socketio(server)
 const {generateMessages,generateLocation}=require('./utils/messages')
 const publicDirectoryPath=path.join(__dirname,'../public')
+
 const {addUser,getUser,getusersInRoom,removeUser}=require('./utils/users')
 
 app.use(express.static(publicDirectoryPath))
+
 
 io.on('connection',(socket)=>{
     console.log('New WebSocket Connection')
@@ -57,9 +59,6 @@ io.on('connection',(socket)=>{
 
 })
 
-app.get('/', function(req, res){
-    res.redirect('/');
- });
 
 server.listen(port,()=>{
     console.log(`server is up on port ${port}!`)
